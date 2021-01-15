@@ -6,10 +6,10 @@ branches:
   only:
     - master
 
-build: Script
+build: off
 
 install:
   off
 
 build_script:
-  off
+  Script
