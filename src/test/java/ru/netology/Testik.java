@@ -2,9 +2,10 @@ package ru.netology;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
+
 public class Testik {
     @org.junit.jupiter.api.Test
-    void shouldReturnDemoAccounts() {
+    void shouldPass() {
         given()
                 .baseUri("https://postman-echo.com")
                 .body("some data")
@@ -13,6 +14,18 @@ public class Testik {
                 .then()
                 .statusCode(200)
                 .body("data", equalTo("some data"))
+        ;
+    }
+    @org.junit.jupiter.api.Test
+    void shouldFail(){
+        given()
+                .baseUri("https://postman-echo.com")
+                .body("some data")
+                .when()
+                .post("/post")
+                .then()
+                .statusCode(200)
+                .body("data", equalTo("any data"))
         ;
     }
 }
