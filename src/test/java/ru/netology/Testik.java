@@ -16,17 +16,5 @@ public class Testik {
                 .body("data", equalTo("some data"))
         ;
     }
-    @org.junit.jupiter.api.Test
-    void shouldFail(){
-        given()
-                .baseUri("https://postman-echo.com")
-                .body("some data")
-                .when()
-                .post("/post")
-                .then()
-                .statusCode(200)
-                .body("data", equalTo("any data"))
-        ;
-    }
 }
 
