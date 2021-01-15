@@ -12,4 +12,4 @@ install:
   off
 
 build_script:
-  - ./gradlew test --info
+  off
